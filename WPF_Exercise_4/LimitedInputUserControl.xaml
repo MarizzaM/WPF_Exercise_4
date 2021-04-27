@@ -35,12 +35,12 @@
                 <TextBlock Text="{Binding MaxLength}" />
             </StackPanel>
         </Label>
-        <Slider Minimum="0" Maximum="{Binding MaxLength}" Grid.Row="1" Grid.ColumnSpan="2" Name="slider"  />
+        <Slider IsSnapToTickEnabled="True" Minimum="0" Maximum="{Binding MaxLength}" Grid.Row="1" Grid.ColumnSpan="2" Name="slider"  />
         <Label Grid.Column="1" Grid.Row="1" Margin="0 8 0 10">
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="txtPer">
                     <TextBlock.Text>
-                        <MultiBinding  Converter="{StaticResource ValueToPercentConverter}" StringFormat="{}{0}%">
+                        <MultiBinding Converter="{StaticResource ValueToPercentConverter}" StringFormat="{}{0}%">
                             <Binding ElementName="slider" Path="Value"/>
                             <Binding  ElementName="slider" Path="Maximum"/>
                         </MultiBinding>
